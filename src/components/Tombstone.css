@@ -1,0 +1,88 @@
+.tombstone {
+  position: relative;
+  border: none;
+  background: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: inherit;
+  color: inherit;
+}
+
+.tombstone__stone {
+  width: 100%;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.4rem;
+  padding: 2rem 1.25rem 1.5rem;
+  background: linear-gradient(160deg, var(--grave-stone) 0%, #bdb69f 100%);
+  border: 2px solid #0b0f0c;
+  border-radius: 50% 50% 6px 6px / 20% 20% 4% 4%;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25),
+    0 12px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.tombstone:hover .tombstone__stone,
+.tombstone:focus-visible .tombstone__stone {
+  transform: translateY(-6px) rotate(-0.6deg);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    0 20px 34px rgba(0, 0, 0, 0.45);
+}
+
+.tombstone__rip {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #4a4636;
+}
+
+.tombstone__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.15;
+  color: #14150f;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.tombstone__years {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: #4a4636;
+}
+
+.tombstone__rule {
+  width: 34px;
+  height: 2px;
+  background: #4a4636;
+  opacity: 0.5;
+  margin: 0.3rem 0;
+}
+
+.tombstone__cause {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.86rem;
+  color: #35331f;
+  line-height: 1.35;
+}
+
+.tombstone__mound {
+  width: 88%;
+  height: 22px;
+  margin-top: -6px;
+  background: radial-gradient(
+    ellipse at center,
+    #263a29 0%,
+    #17231a 70%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  opacity: 0.9;
+}

@@ -1,0 +1,38 @@
+:root {
+  /* Type */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-ui: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+
+  /* Core palette — Lubalin-poster energy: ink, cream, and one hot color doing all the work */
+  --ink: #15130f;
+  --ink-soft: #34302a;
+  --paper: #f3ecd9;
+  --paper-dim: #e9e0c6;
+  --flame: #d8451f;
+  --flame-dark: #a8341a;
+  --gold: #e8a531;
+  --line: rgba(21, 19, 15, 0.16);
+  --line-strong: rgba(21, 19, 15, 0.35);
+
+  /* Graveyard theme — same bones, dusk palette, scoped via [data-theme="graveyard"] */
+  --grave-bg: #161d19;
+  --grave-bg-2: #0e130f;
+  --grave-stone: #d9d3bf;
+  --grave-stone-dim: #a19a86;
+  --grave-fog: rgba(217, 211, 191, 0.08);
+  --grave-line: rgba(217, 211, 191, 0.18);
+  --grave-accent: var(--gold);
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --container-max: 1180px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="graveyard"] {
+  --ink: var(--grave-stone);
+  --paper: var(--grave-bg);
+  --paper-dim: var(--grave-bg-2);
+  --line: var(--grave-line);
+  --line-strong: rgba(217, 211, 191, 0.4);
+}

@@ -1,0 +1,33 @@
+.site-footer {
+  border-top: 3px solid var(--ink);
+  margin-top: auto;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  align-items: center;
+  padding-block: 1.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+}
+
+.site-footer__name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.site-footer__link {
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 1px;
+}
+
+.site-footer__link:hover {
+  color: var(--flame);
+  border-color: var(--flame);
+}

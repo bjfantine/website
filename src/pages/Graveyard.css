@@ -1,0 +1,147 @@
+.graveyard-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.graveyard-content {
+  position: relative;
+  flex: 1;
+  padding-bottom: clamp(3rem, 8vw, 6rem);
+  transition: filter 0.4s ease;
+}
+
+.graveyard-content.is-locked {
+  filter: blur(6px) brightness(0.7);
+  pointer-events: none;
+  user-select: none;
+}
+
+.graveyard-fog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 320px;
+  background: linear-gradient(
+    to bottom,
+    rgba(217, 211, 191, 0.1),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.graveyard-intro {
+  position: relative;
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 7vw, 4.5rem) 1.5rem;
+}
+
+.graveyard-intro__kicker {
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: var(--grave-accent);
+  margin-bottom: 0.9rem;
+}
+
+.graveyard-intro__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+  margin-bottom: 1.1rem;
+}
+
+.graveyard-intro__body {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  opacity: 0.85;
+}
+
+.graveyard-plot {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 2.75rem 1.75rem;
+  padding-top: 2.5rem;
+}
+
+.fragment-detail {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(8, 11, 9, 0.72);
+  backdrop-filter: blur(3px);
+}
+
+.fragment-detail__card {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: 82vh;
+  overflow-y: auto;
+  background: var(--grave-stone);
+  color: #1c2018;
+  border: 3px solid #0b0f0c;
+  border-radius: 6px 6px 14px 14px / 6px 6px 10px 10px;
+  padding: clamp(1.9rem, 4vw, 2.6rem);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+}
+
+.fragment-detail__close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.95rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #0b0f0c;
+  background: transparent;
+  color: #0b0f0c;
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.fragment-detail__close:hover {
+  background: #0b0f0c;
+  color: var(--grave-stone);
+}
+
+.fragment-detail__meta {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5c5842;
+  margin-bottom: 0.7rem;
+}
+
+.fragment-detail__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  margin-bottom: 0.85rem;
+}
+
+.fragment-detail__epitaph {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--flame-dark);
+  margin-bottom: 1.4rem;
+}
+
+.fragment-detail__excerpt {
+  font-size: 1.03rem;
+  line-height: 1.75;
+}
