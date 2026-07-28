@@ -13,15 +13,11 @@ export const site = {
   initials: "BJF",
   byline: "Fiction with a body count and a punchline.",
   role: "Author",
-  // Replace with your real Substack URL.
   substackUrl: "https://bjfantine.substack.com",
   email: "bj@bjfantine.com",
 };
 
 export const bio = {
-  photoAlt: `Photo of ${site.name}`,
-  // Replace with the real headshot. Drop the file at public/author-photo.jpg
-  // (or change the path in Bio.tsx) and this placeholder frame disappears.
   paragraphs: [
     `${site.name} writes fiction the way other people set off fireworks in a parking lot — with enthusiasm, a little too close to the car, and no real plan for the aftermath. Work has appeared in places that pay in exposure and places that pay in actual money, sometimes even the same year.`,
     `A former [placeholder job — replace with something true and slightly absurd] and a current owner of too many notebooks, ${site.name.split(" ")[0]} writes about grief, bureaucracy, and the specific indignity of being a person, usually all in the same paragraph. The work has been called "unsettling," "very funny," and "unsettling because it's very funny," which feels about right.`,

@@ -1,16 +1,16 @@
 :root {
-  /* Type */
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
-  --font-ui: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  /* Type — a literary book-interior serif + a Gill Sans-adjacent humanist grotesque for UI */
+  --font-display: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --font-ui: "Libre Franklin", "Gill Sans", "Helvetica Neue", Arial, sans-serif;
 
-  /* Core palette — Lubalin-poster energy: ink, cream, and one hot color doing all the work */
+  /* Core palette — imprint-orange, ink, and cream: the color of a publishing house colophon */
   --ink: #15130f;
   --ink-soft: #34302a;
   --paper: #f3ecd9;
   --paper-dim: #e9e0c6;
-  --flame: #d8451f;
-  --flame-dark: #a8341a;
-  --gold: #e8a531;
+  --flame: #ea6425;
+  --flame-dark: #b84a16;
+  --gold: #dda23c;
   --line: rgba(21, 19, 15, 0.16);
   --line-strong: rgba(21, 19, 15, 0.35);
 

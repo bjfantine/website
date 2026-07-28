@@ -65,24 +65,98 @@
   margin: 0.3rem 0;
 }
 
+.tombstone__cause-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 2.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15rem;
+}
+
 .tombstone__cause {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-display);
   font-style: italic;
   font-size: 0.86rem;
   color: #35331f;
   line-height: 1.35;
+  padding-inline: 0.35rem;
+}
+
+.tombstone__cause-grass {
+  position: absolute;
+  inset: -0.4em -0.7em;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1px;
+  padding-bottom: 2px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #4c7038 0%, #35502a 55%, #223a1c 100%);
+  box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.25);
+  transform-origin: bottom center;
+  transition: transform 0.55s var(--ease-out), opacity 0.45s ease;
+}
+
+.tombstone__cause-grass .tombstone__blade {
+  background: linear-gradient(to top, #24391d 0%, #5c8a49 60%, #9bc97f 100%);
+}
+
+.tombstone:hover .tombstone__cause-grass,
+.tombstone:focus-visible .tombstone__cause-grass {
+  transform: translateY(-112%) scaleY(0.4);
+  opacity: 0;
+}
+
+.tombstone__blade {
+  display: inline-block;
+  width: 4px;
+  height: var(--h);
+  border-radius: 60% 60% 10% 10% / 80% 80% 10% 10%;
+  transform: rotate(var(--rot));
+  transform-origin: bottom center;
+  animation-delay: var(--delay);
+}
+
+.tombstone:hover .tombstone__blade,
+.tombstone:focus-visible .tombstone__blade {
+  animation: blade-rustle 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes blade-rustle {
+  from {
+    transform: rotate(var(--rot));
+  }
+  to {
+    transform: rotate(calc(var(--rot) + 11deg));
+  }
 }
 
 .tombstone__mound {
-  width: 88%;
-  height: 22px;
-  margin-top: -6px;
+  display: block;
+  width: 72%;
+  height: 14px;
+  margin-top: -4px;
   background: radial-gradient(
     ellipse at center,
-    #263a29 0%,
-    #17231a 70%,
-    transparent 100%
+    rgba(20, 30, 22, 0.55) 0%,
+    transparent 75%
   );
   border-radius: 50%;
-  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tombstone:hover .tombstone__cause-grass,
+  .tombstone:focus-visible .tombstone__cause-grass {
+    transition: opacity 0.2s ease;
+  }
+  .tombstone:hover .tombstone__blade,
+  .tombstone:focus-visible .tombstone__blade {
+    animation: none;
+  }
 }

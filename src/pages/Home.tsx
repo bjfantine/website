@@ -35,7 +35,7 @@ export default function Home({ introDone, onIntroComplete }: Props) {
         style={{ pointerEvents: introVisible ? "none" : "auto" }}
       >
         <div className="container hero__inner">
-          <p className="hero__kicker">Author of things that bite back</p>
+          <p className="hero__kicker">Novelist</p>
           <h1 className="hero__headline">
             Stories with a <em>pulse</em>,<br />
             not a <span className="hero__strike">tragic ending</span>{" "}
@@ -70,10 +70,9 @@ export default function Home({ introDone, onIntroComplete }: Props) {
             <span className="teaser-card__index">01</span>
             <h2 className="teaser-card__title">Bio</h2>
             <p className="teaser-card__copy">
-              Credits, credentials, and the one true fact that explains
-              everything else.
+              Background, credits, and the occasional necessary fact.
             </p>
-            <span className="teaser-card__cta">Meet the author →</span>
+            <span className="teaser-card__cta">Read more →</span>
           </Link>
 
           <a
@@ -85,8 +84,7 @@ export default function Home({ introDone, onIntroComplete }: Props) {
             <span className="teaser-card__index">02</span>
             <h2 className="teaser-card__title">Substack</h2>
             <p className="teaser-card__copy">
-              Essays, updates, and whatever else refused to stay in a
-              drawer.
+              Essays and new work, sent out as they're finished.
             </p>
             <span className="teaser-card__cta">Subscribe ↗</span>
           </a>
@@ -95,10 +93,9 @@ export default function Home({ introDone, onIntroComplete }: Props) {
             <span className="teaser-card__index">03</span>
             <h2 className="teaser-card__title">The Graveyard</h2>
             <p className="teaser-card__copy">
-              Every line that didn't make it, buried with its dates and
-              cause of death.
+              Unfinished drafts and cut lines, kept and credited.
             </p>
-            <span className="teaser-card__cta">Enter if you dare →</span>
+            <span className="teaser-card__cta">Visit the graveyard →</span>
           </Link>
         </div>
       </motion.section>
