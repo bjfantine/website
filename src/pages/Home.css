@@ -14,6 +14,17 @@
 
 .hero__quote {
   margin: 0 0 2rem;
+  /* Fixed footprint sized for the longest quote in the rotation (measured
+     empirically — text-wrap breakpoints make this non-linear with width),
+     so cycling quotes never reflows the page. Any slack for shorter quotes
+     falls below the attribution, not between it and the text. */
+  min-height: 21rem;
+}
+
+@media (min-width: 561px) {
+  .hero__quote {
+    min-height: 23.5rem;
+  }
 }
 
 .hero__quote-text {
@@ -24,7 +35,7 @@
   line-height: 1.18;
   letter-spacing: -0.01em;
   color: var(--ink);
-  margin: 0 0 1.1rem;
+  margin: 0 0 0.85rem;
 }
 
 .hero__quote-attr {

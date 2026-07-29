@@ -16,7 +16,7 @@ export const site = {
   substackUrl: "https://bjfantine.substack.com",
   blueskyUrl: "https://bsky.app/profile/bjfantine.bsky.social",
   instagramUrl: "https://www.instagram.com/bjfantine/",
-  photo: "/headshot_retouched.jpg",
+  photo: "/headshot_raw.jpg",
   // Get a free access key at https://web3forms.com (just enter the inbox
   // email you want messages forwarded to — no account/password needed)
   // and paste it here. Until then the contact form will show an error.

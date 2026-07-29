@@ -23,13 +23,19 @@ const SHADES = ["a", "b", "c"] as const;
 function bladePath(x: number, h: number, w: number, lean: number) {
   const tipX = x + lean;
   const tipY = BASE_Y - h;
-  const c1y = BASE_Y - h * 0.35;
-  const c2y = BASE_Y - h * 0.75;
-  return `M ${x - w / 2} ${BASE_Y} C ${x - w / 2 + lean * 0.15} ${c1y} ${
-    tipX - w * 0.2
-  } ${c2y} ${tipX} ${tipY} C ${tipX + w * 0.2} ${c2y} ${
-    x + w / 2 + lean * 0.15
-  } ${c1y} ${x + w / 2} ${BASE_Y} Z`;
+  const tipR = Math.max(w * 0.16, 1);
+  const bellyY = BASE_Y - h * 0.42;
+  const bellyW = w * 0.66;
+  const leanMid = lean * 0.45;
+
+  return [
+    `M ${x - w / 2} ${BASE_Y}`,
+    `Q ${x - bellyW + leanMid} ${bellyY} ${tipX - tipR} ${tipY + tipR * 1.4}`,
+    `Q ${tipX - tipR * 0.4} ${tipY} ${tipX} ${tipY}`,
+    `Q ${tipX + tipR * 0.4} ${tipY} ${tipX + tipR} ${tipY + tipR * 1.4}`,
+    `Q ${x + bellyW + leanMid} ${bellyY} ${x + w / 2} ${BASE_Y}`,
+    "Z",
+  ].join(" ");
 }
 
 function departFactor(x: number) {
@@ -59,7 +65,7 @@ function makeBlades(count: number, mirror: 1 | -1): BladeCfg[] {
     const r2 = pseudoRandom(i * 7.7 + (mirror === 1 ? 23 : 59));
     const heightBase = 134 - t * 78;
     const h = heightBase * (0.72 + r1 * 0.55);
-    const w = 4.5 + r2 * 4;
+    const w = 6 + r2 * 4.5;
     const lean = mirror * (3 + t * 9 + r1 * 5);
     const shade = SHADES[i % 3];
     blades.push({ x, h, w, lean, shade });
@@ -119,26 +125,6 @@ export default function Tombstone({ fragment, onSelect, index }: Props) {
       aria-label={`Read the fragment "${fragment.title}" — hover or focus to part the grass`}
     >
       <span className="tombstone__stone">
-        <svg
-          className="tombstone__cracks"
-          viewBox="0 0 200 300"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            className="tombstone__crack"
-            d="M64 0 L58 38 L72 66 L52 98 L66 140"
-          />
-          <path
-            className="tombstone__crack"
-            d="M150 20 L162 54 L142 80 L156 118 L146 300"
-          />
-          <circle className="tombstone__blemish" cx="40" cy="120" r="3" />
-          <circle className="tombstone__blemish" cx="168" cy="150" r="2.4" />
-          <circle className="tombstone__blemish" cx="112" cy="60" r="2" />
-          <circle className="tombstone__blemish" cx="90" cy="180" r="2.6" />
-        </svg>
-
         <svg
           className="tombstone__ivy"
           viewBox="0 0 40 64"
