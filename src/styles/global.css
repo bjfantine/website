@@ -56,7 +56,7 @@ a {
 }
 
 ::selection {
-  background: var(--flame);
+  background: var(--ivy);
   color: var(--paper);
 }
 
@@ -81,7 +81,7 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid var(--flame);
+  outline: 3px solid var(--ivy);
   outline-offset: 3px;
 }
 
@@ -143,18 +143,18 @@ button {
 }
 
 .btn-solid:hover {
-  background: var(--flame);
-  border-color: var(--flame);
+  background: var(--ivy);
+  border-color: var(--ivy);
   color: var(--paper);
 }
 
-.btn-flame {
-  background: var(--flame);
-  border-color: var(--flame);
+.btn-ivy {
+  background: var(--ivy);
+  border-color: var(--ivy);
   color: var(--paper);
 }
 
-.btn-flame:hover {
-  background: var(--flame-dark);
-  border-color: var(--flame-dark);
+.btn-ivy:hover {
+  background: var(--ivy-dark);
+  border-color: var(--ivy-dark);
 }

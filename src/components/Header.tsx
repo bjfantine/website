@@ -30,6 +30,14 @@ export default function Header({ visible }: HeaderProps) {
           >
             Bio
           </NavLink>
+          <NavLink
+            to="/selected-work"
+            className={({ isActive }) =>
+              "site-header__link" + (isActive ? " is-active" : "")
+            }
+          >
+            Selected Work
+          </NavLink>
           <a
             href={site.substackUrl}
             target="_blank"

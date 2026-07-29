@@ -17,6 +17,22 @@ export default function Footer() {
         >
           Substack ↗
         </a>
+        <a
+          className="site-footer__link"
+          href={site.blueskyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Bluesky ↗
+        </a>
+        <a
+          className="site-footer__link"
+          href={site.instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram ↗
+        </a>
       </div>
     </footer>
   );

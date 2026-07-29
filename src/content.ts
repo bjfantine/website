@@ -15,6 +15,11 @@ export const site = {
   role: "Author",
   substackUrl: "https://bjfantine.substack.com",
   email: "bj@bjfantine.com",
+  blueskyUrl: "https://bsky.app/profile/bjfantine.bsky.social",
+  instagramUrl: "https://www.instagram.com/bjfantine/",
+  // Replace with a real photo (jpg/png/webp all fine) — keep this path,
+  // or update it here if you rename the file.
+  photo: "/author-photo.svg",
 };
 
 export const bio = {
@@ -24,6 +29,48 @@ export const bio = {
     `${site.name.split(" ")[0]} lives [placeholder city], with [placeholder pet/plant/roommate], and is currently working on a novel that keeps changing its mind about what it wants to be. There is a Graveyard for the ideas that didn't make it. Visitors are welcome, but they have to sign something first.`,
   ],
 };
+
+export type HeroQuote = {
+  text: string;
+  author: string;
+  source: string;
+};
+
+// A working writer's shelf, not a highlight reel — pulled from Quotes.rtf.
+// The Vuong line is the one worth building a homepage around; the rest
+// round it out with some humor and some heart.
+export const heroQuotes: HeroQuote[] = [
+  {
+    text: "You once asked me what it means to be a writer. So here goes.",
+    author: "Ocean Vuong",
+    source: "On Earth We're Briefly Gorgeous",
+  },
+  {
+    text: "Everything was beautiful and nothing hurt.",
+    author: "Kurt Vonnegut",
+    source: "Slaughterhouse-Five",
+  },
+  {
+    text: "The robbing of a hot dog vendor is a symbolic act.",
+    author: "John Kennedy Toole",
+    source: "A Confederacy of Dunces",
+  },
+  {
+    text: "The most pressing questions are naive ones.",
+    author: "Wisława Szymborska",
+    source: "The People on the Bridge",
+  },
+  {
+    text: "This is exactly when you want to look good. When you making trouble.",
+    author: "Maurice Carlos Ruffin",
+    source: "The Ones Who Don't Say They Love You",
+  },
+  {
+    text: "We've achieved something.",
+    author: "James Roberts",
+    source: "Transformers: More Than Meets the Eye #41",
+  },
+];
 
 export type Fragment = {
   id: string;

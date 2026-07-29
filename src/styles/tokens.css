@@ -3,14 +3,14 @@
   --font-display: "Source Serif 4", "Iowan Old Style", Georgia, serif;
   --font-ui: "Libre Franklin", "Gill Sans", "Helvetica Neue", Arial, sans-serif;
 
-  /* Core palette — imprint-orange, ink, and cream: the color of a publishing house colophon */
+  /* Core palette — deep ivy green, ink, and cream: the graveyard's green, carried through the whole site */
   --ink: #15130f;
   --ink-soft: #34302a;
   --paper: #f3ecd9;
   --paper-dim: #e9e0c6;
-  --flame: #ea6425;
-  --flame-dark: #b84a16;
-  --gold: #dda23c;
+  --ivy: #3f7a52;
+  --ivy-dark: #1f4a2c;
+  --ivy-light: #6fae6a;
   --line: rgba(21, 19, 15, 0.16);
   --line-strong: rgba(21, 19, 15, 0.35);
 
@@ -21,7 +21,10 @@
   --grave-stone-dim: #a19a86;
   --grave-fog: rgba(217, 211, 191, 0.08);
   --grave-line: rgba(217, 211, 191, 0.18);
-  --grave-accent: var(--gold);
+  --grave-accent: var(--ivy-light);
+  --grave-moss: #3f7a52;
+  --grave-moss-dark: #1f4a2c;
+  --grave-moss-light: #8fc78a;
 
   --radius-sm: 4px;
   --radius-md: 10px;

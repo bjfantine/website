@@ -13,19 +13,26 @@ export default function Bio() {
       transition={{ duration: 0.6, ease: EASE }}
     >
       <div className="container bio-page__inner">
-        <p className="bio-copy__kicker">Bio</p>
-        <h1 className="bio-copy__name">{site.name}</h1>
+        <div className="bio-page__photo-wrap">
+          <img
+            className="bio-page__photo"
+            src={site.photo}
+            alt={site.name}
+            width={400}
+            height={500}
+          />
+        </div>
 
-        {bio.paragraphs.map((paragraph, index) => (
-          <p
-            key={index}
-            className={
-              "bio-copy__para" + (index === 0 ? " bio-copy__para--lead" : "")
-            }
-          >
-            {paragraph}
-          </p>
-        ))}
+        <div className="bio-page__copy">
+          <p className="bio-copy__kicker">Bio</p>
+          <h1 className="bio-copy__name">{site.name}</h1>
+
+          {bio.paragraphs.map((paragraph, index) => (
+            <p key={index} className="bio-copy__para">
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
     </motion.section>
   );

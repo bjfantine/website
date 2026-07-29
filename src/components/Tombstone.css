@@ -11,20 +11,20 @@
 }
 
 .tombstone__stone {
+  position: relative;
   width: 100%;
-  min-height: 230px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
-  gap: 0.4rem;
-  padding: 2rem 1.25rem 1.5rem;
+  padding: 2rem 0 0;
   background: linear-gradient(160deg, var(--grave-stone) 0%, #bdb69f 100%);
   border: 2px solid #0b0f0c;
   border-radius: 50% 50% 6px 6px / 20% 20% 4% 4%;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25),
     0 12px 24px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  overflow: hidden;
 }
 
 .tombstone:hover .tombstone__stone,
@@ -32,6 +32,25 @@
   transform: translateY(-6px) rotate(-0.6deg);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3),
     0 20px 34px rgba(0, 0, 0, 0.45);
+}
+
+.tombstone__ivy {
+  position: absolute;
+  top: 0;
+  left: 6px;
+  width: 26px;
+  height: auto;
+  opacity: 0.85;
+  z-index: 3;
+}
+
+.tombstone__stone-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding-inline: 1.25rem;
+  flex-shrink: 0;
 }
 
 .tombstone__rip {
@@ -65,14 +84,14 @@
   margin: 0.3rem 0;
 }
 
-.tombstone__cause-wrap {
+.tombstone__stone-bottom {
   position: relative;
-  width: 100%;
-  min-height: 2.7em;
+  flex: 1;
+  min-height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0.15rem;
+  padding-inline: 0.75rem;
 }
 
 .tombstone__cause {
@@ -86,77 +105,75 @@
   padding-inline: 0.35rem;
 }
 
-.tombstone__cause-grass {
+.tombstone__grass {
   position: absolute;
-  inset: -0.4em -0.7em;
+  inset: 0;
   z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 1px;
-  padding-bottom: 2px;
-  overflow: hidden;
-  border-radius: 3px;
-  background: linear-gradient(180deg, #4c7038 0%, #35502a 55%, #223a1c 100%);
-  box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.25);
-  transform-origin: bottom center;
-  transition: transform 0.55s var(--ease-out), opacity 0.45s ease;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
 }
 
-.tombstone__cause-grass .tombstone__blade {
-  background: linear-gradient(to top, #24391d 0%, #5c8a49 60%, #9bc97f 100%);
+.tombstone__blade-sway {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: blade-idle-sway 3.4s ease-in-out infinite;
 }
 
-.tombstone:hover .tombstone__cause-grass,
-.tombstone:focus-visible .tombstone__cause-grass {
-  transform: translateY(-112%) scaleY(0.4);
-  opacity: 0;
-}
-
-.tombstone__blade {
-  display: inline-block;
-  width: 4px;
-  height: var(--h);
-  border-radius: 60% 60% 10% 10% / 80% 80% 10% 10%;
-  transform: rotate(var(--rot));
-  transform-origin: bottom center;
-  animation-delay: var(--delay);
-}
-
-.tombstone:hover .tombstone__blade,
-.tombstone:focus-visible .tombstone__blade {
-  animation: blade-rustle 0.7s ease-in-out infinite alternate;
-}
-
-@keyframes blade-rustle {
-  from {
-    transform: rotate(var(--rot));
+@keyframes blade-idle-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
   }
-  to {
-    transform: rotate(calc(var(--rot) + 11deg));
+  50% {
+    transform: rotate(2.5deg);
   }
+}
+
+.tombstone__blade-shape {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transition: transform 0.55s var(--ease-out);
+  transition-delay: var(--delay, 0ms);
+}
+
+.tombstone:hover .tombstone__blade-shape--left,
+.tombstone:focus-visible .tombstone__blade-shape--left {
+  transform: translate(
+      calc(-11px * var(--depart, 1)),
+      calc(7px * var(--depart, 1))
+    )
+    rotate(calc(-26deg * var(--depart, 1)));
+}
+
+.tombstone:hover .tombstone__blade-shape--right,
+.tombstone:focus-visible .tombstone__blade-shape--right {
+  transform: translate(
+      calc(11px * var(--depart, 1)),
+      calc(7px * var(--depart, 1))
+    )
+    rotate(calc(26deg * var(--depart, 1)));
 }
 
 .tombstone__mound {
   display: block;
   width: 72%;
-  height: 14px;
-  margin-top: -4px;
+  height: 10px;
+  margin-top: -2px;
   background: radial-gradient(
     ellipse at center,
-    rgba(20, 30, 22, 0.55) 0%,
+    rgba(20, 30, 22, 0.4) 0%,
     transparent 75%
   );
   border-radius: 50%;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tombstone:hover .tombstone__cause-grass,
-  .tombstone:focus-visible .tombstone__cause-grass {
-    transition: opacity 0.2s ease;
-  }
-  .tombstone:hover .tombstone__blade,
-  .tombstone:focus-visible .tombstone__blade {
+  .tombstone__blade-sway {
     animation: none;
+  }
+  .tombstone__blade-shape {
+    transition-duration: 0.2s;
   }
 }

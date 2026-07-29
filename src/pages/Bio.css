@@ -4,8 +4,25 @@
 }
 
 .bio-page__inner {
-  max-width: 700px;
+  max-width: 980px;
   margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+.bio-page__photo-wrap {
+  position: static;
+}
+
+.bio-page__photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
 }
 
 .bio-copy__kicker {
@@ -14,7 +31,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--flame);
+  color: var(--ivy);
   margin-bottom: 0.75rem;
 }
 
@@ -31,13 +48,12 @@
   margin-bottom: 1.5rem;
 }
 
-.bio-copy__para--lead::first-letter {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 3.6rem;
-  float: left;
-  line-height: 0.78;
-  padding: 0.05em 0.1em 0 0;
-  color: var(--flame);
+@media (max-width: 720px) {
+  .bio-page__inner {
+    grid-template-columns: 1fr;
+  }
+  .bio-page__photo-wrap {
+    max-width: 260px;
+    margin-inline: auto;
+  }
 }
-

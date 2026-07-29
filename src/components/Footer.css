@@ -28,6 +28,6 @@
 }
 
 .site-footer__link:hover {
-  color: var(--flame);
-  border-color: var(--flame);
+  color: var(--ivy);
+  border-color: var(--ivy);
 }

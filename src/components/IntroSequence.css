@@ -17,7 +17,7 @@
   display: block;
   width: 64px;
   height: 4px;
-  background: var(--flame);
+  background: var(--ivy);
   transform-origin: center;
 }
 
@@ -34,6 +34,6 @@
   font-style: italic;
   font-weight: 400;
   font-size: clamp(1rem, 2.2vw, 1.35rem);
-  color: var(--gold);
+  color: var(--ivy-light);
   max-width: 32ch;
 }

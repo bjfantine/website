@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Bio from "./pages/Bio";
+import SelectedWork from "./pages/SelectedWork";
 import Graveyard from "./pages/Graveyard";
 
 const INTRO_KEY = "intro-seen";
@@ -41,6 +42,7 @@ export default function App() {
             }
           />
           <Route path="/bio" element={<Bio />} />
+          <Route path="/selected-work" element={<SelectedWork />} />
           <Route path="/graveyard" element={<Graveyard />} />
         </Routes>
       </main>

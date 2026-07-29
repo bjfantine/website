@@ -33,7 +33,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--flame-dark);
+  color: var(--ivy-dark);
   margin-bottom: 0.6rem;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .terms-gate__list strong {
-  color: var(--flame-dark);
+  color: var(--ivy-dark);
 }
 
 .terms-gate__checkbox {
@@ -77,7 +77,7 @@
   margin-top: 0.2rem;
   width: 18px;
   height: 18px;
-  accent-color: var(--flame-dark);
+  accent-color: var(--ivy-dark);
   flex-shrink: 0;
 }
 
@@ -93,7 +93,7 @@
   color: #0b0f0c;
 }
 
-.terms-gate__actions .btn-flame:disabled {
+.terms-gate__actions .btn-ivy:disabled {
   opacity: 0.4;
   cursor: not-allowed;
   transform: none;

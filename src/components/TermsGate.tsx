@@ -27,33 +27,24 @@ export default function TermsGate({ onAgree }: Props) {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="terms-gate__kicker">Cemetery Bylaws — Read Before Entering</p>
+        <p className="terms-gate__kicker">Rules of the Dead — Please Read Before Entering</p>
         <h1 id="terms-gate-title" className="terms-gate__title">
           Terms &amp; Conditions of Entry
         </h1>
 
         <ol className="terms-gate__list">
           <li>
-            Everything beyond this gate is <strong>unfinished</strong> —
-            drafts, fragments, and sentences that never got where they were
-            going. None of it is offered as a completed work.
+            The Graveyard is a public mausoleum of scrapped projects,
+            unfinished drafts, and lines that never truly found their home.
+            Everything buried here is unfinished — perhaps one day I'll 
+            resurrect my dead. Until then, they remain buried here.
           </li>
           <li>
-            Reading The Graveyard is free and will stay that way. No account,
-            no email, no name required. Clicking "agree" below doesn't
-            register your identity anywhere — this exists purely as a
-            formality, for the record and for the dead.
-          </li>
-          <li>
-            <strong>Unfinished is not the same as unclaimed.</strong>{" "}
-            Substantially derivative work — free or paid, published or
-            posted — based on material found here requires clear
-            accreditation to {site.name}. Lifting a line from a grave is
-            still plagiarism, even if the grave says "abandoned."
-          </li>
-          <li>
-            By proceeding, you agree to the above and promise to treat the
-            dead with a reasonable amount of respect.
+            <strong>Don't be a grave robber!</strong> All substantially derivative 
+            non-commerical work based on contents within The Graveyard requires accreditation,
+            and all commerical works express permission. This agreement is internationally
+            enforced by an Attribution-NonCommercial Creative Commons License.
+            You can read more about your rights under a CC By-NC <a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode.en">here</a>.
           </li>
         </ol>
 
@@ -65,7 +56,7 @@ export default function TermsGate({ onAgree }: Props) {
           />
           <span>
             I understand these works are unfinished and agree to credit the
-            author for any substantially derivative use.
+            author or obtain their direct permission if necessary.
           </span>
         </label>
 
@@ -75,11 +66,11 @@ export default function TermsGate({ onAgree }: Props) {
           </Link>
           <button
             type="button"
-            className="btn btn-flame"
+            className="btn btn-ivy"
             disabled={!checked}
             onClick={onAgree}
           >
-            I agree — let me in
+            I agree — let me in!
           </button>
         </div>
       </motion.div>

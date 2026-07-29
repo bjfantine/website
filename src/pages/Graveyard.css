@@ -137,7 +137,7 @@
 .fragment-detail__epitaph {
   font-family: var(--font-display);
   font-style: italic;
-  color: var(--flame-dark);
+  color: var(--ivy-dark);
   margin-bottom: 1.4rem;
 }
 
