@@ -3,9 +3,10 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Bio from "./pages/Bio";
+import About from "./pages/About";
 import SelectedWork from "./pages/SelectedWork";
 import Graveyard from "./pages/Graveyard";
+import Contact from "./pages/Contact";
 
 const INTRO_KEY = "intro-seen";
 
@@ -41,9 +42,10 @@ export default function App() {
               />
             }
           />
-          <Route path="/bio" element={<Bio />} />
+          <Route path="/about" element={<About />} />
           <Route path="/selected-work" element={<SelectedWork />} />
           <Route path="/graveyard" element={<Graveyard />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />

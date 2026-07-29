@@ -6,7 +6,7 @@ import { heroQuotes, site } from "../content";
 import "./Home.css";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
-const QUOTE_INTERVAL_MS = 7000;
+const QUOTE_INTERVAL_MS = 5000;
 
 type Props = {
   introDone: boolean;
@@ -46,8 +46,6 @@ export default function Home({ introDone, onIntroComplete }: Props) {
         style={{ pointerEvents: introVisible ? "none" : "auto" }}
       >
         <div className="container hero__inner">
-          <p className="hero__kicker">Novelist</p>
-
           <AnimatePresence mode="wait">
             <motion.blockquote
               key={quoteIndex}
@@ -66,8 +64,8 @@ export default function Home({ introDone, onIntroComplete }: Props) {
 
           <p className="hero__lede">{site.byline}</p>
           <div className="hero__actions">
-            <Link to="/bio" className="btn btn-solid">
-              Read the Bio
+            <Link to="/about" className="btn btn-solid">
+              About B.J.
             </Link>
             <a
               href={site.substackUrl}
@@ -88,47 +86,58 @@ export default function Home({ introDone, onIntroComplete }: Props) {
         transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
         style={{ pointerEvents: introVisible ? "none" : "auto" }}
       >
-        <div className="container teasers__grid">
-          <Link to="/bio" className="teaser-card">
-            <span className="teaser-card__index">01</span>
-            <h2 className="teaser-card__title">Bio</h2>
-            <p className="teaser-card__copy">
-              Background, credits, and the occasional necessary fact.
-            </p>
-            <span className="teaser-card__cta">Read more →</span>
-          </Link>
+        <div className="container">
+          <div className="teasers__grid">
+            <Link to="/about" className="teaser-card">
+              <span className="teaser-card__index">01</span>
+              <h2 className="teaser-card__title">About B.J.</h2>
+              <p className="teaser-card__copy">
+                Background, credits, and the occasional necessary fact.
+              </p>
+              <span className="teaser-card__cta">Read more →</span>
+            </Link>
 
-          <Link to="/selected-work" className="teaser-card">
-            <span className="teaser-card__index">02</span>
-            <h2 className="teaser-card__title">Selected Work</h2>
-            <p className="teaser-card__copy">
-              Longer work, gathered in one place. Coming soon.
-            </p>
-            <span className="teaser-card__cta">Take a look →</span>
-          </Link>
+            <Link to="/selected-work" className="teaser-card">
+              <span className="teaser-card__index">02</span>
+              <h2 className="teaser-card__title">Selected Work</h2>
+              <p className="teaser-card__copy">
+                Longer work, gathered in one place. Coming soon.
+              </p>
+              <span className="teaser-card__cta">Take a look →</span>
+            </Link>
 
-          <a
-            href={site.substackUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="teaser-card"
-          >
-            <span className="teaser-card__index">03</span>
-            <h2 className="teaser-card__title">Substack</h2>
-            <p className="teaser-card__copy">
-              Essays and new work, sent out as they're finished.
-            </p>
-            <span className="teaser-card__cta">Subscribe ↗</span>
-          </a>
+            <a
+              href={site.substackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="teaser-card"
+            >
+              <span className="teaser-card__index">03</span>
+              <h2 className="teaser-card__title">Substack</h2>
+              <p className="teaser-card__copy">
+                Essays and new work, sent out as they're finished.
+              </p>
+              <span className="teaser-card__cta">Subscribe ↗</span>
+            </a>
 
-          <Link to="/graveyard" className="teaser-card teaser-card--grave">
-            <span className="teaser-card__index">04</span>
-            <h2 className="teaser-card__title">The Graveyard</h2>
-            <p className="teaser-card__copy">
-              Unfinished drafts and cut lines, kept and credited.
-            </p>
-            <span className="teaser-card__cta">Visit the graveyard →</span>
-          </Link>
+            <Link to="/graveyard" className="teaser-card teaser-card--grave">
+              <span className="teaser-card__index">04</span>
+              <h2 className="teaser-card__title">The Graveyard</h2>
+              <p className="teaser-card__copy">
+                Unfinished drafts and cut lines, kept and credited.
+              </p>
+              <span className="teaser-card__cta">Visit the graveyard →</span>
+            </Link>
+
+            <Link to="/contact" className="teaser-card">
+              <span className="teaser-card__index">05</span>
+              <h2 className="teaser-card__title">Contact</h2>
+              <p className="teaser-card__copy">
+                Social links and a form, for anything else.
+              </p>
+              <span className="teaser-card__cta">Get in touch →</span>
+            </Link>
+          </div>
         </div>
       </motion.section>
     </div>

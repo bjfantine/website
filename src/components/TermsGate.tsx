@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { site } from "../content";
 import "./TermsGate.css";
 
 type Props = {

@@ -23,12 +23,12 @@ export default function Header({ visible }: HeaderProps) {
         </NavLink>
         <nav className="site-header__nav" aria-label="Primary">
           <NavLink
-            to="/bio"
+            to="/about"
             className={({ isActive }) =>
               "site-header__link" + (isActive ? " is-active" : "")
             }
           >
-            Bio
+            About B.J.
           </NavLink>
           <NavLink
             to="/selected-work"
@@ -54,6 +54,14 @@ export default function Header({ visible }: HeaderProps) {
             }
           >
             The Graveyard
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              "site-header__link" + (isActive ? " is-active" : "")
+            }
+          >
+            Contact
           </NavLink>
         </nav>
       </div>

@@ -1,9 +1,9 @@
-.bio-page {
+.about-page {
   padding-block: clamp(3rem, 7vw, 5.5rem);
   flex: 1;
 }
 
-.bio-page__inner {
+.about-page__inner {
   max-width: 980px;
   margin-inline: auto;
   display: grid;
@@ -12,11 +12,11 @@
   align-items: start;
 }
 
-.bio-page__photo-wrap {
+.about-page__photo-wrap {
   position: static;
 }
 
-.bio-page__photo {
+.about-page__photo {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 5;
@@ -25,7 +25,7 @@
   border-radius: var(--radius-sm);
 }
 
-.bio-copy__kicker {
+.about-copy__kicker {
   font-family: var(--font-ui);
   font-weight: 600;
   font-size: 0.85rem;
@@ -35,13 +35,13 @@
   margin-bottom: 0.75rem;
 }
 
-.bio-copy__name {
+.about-copy__name {
   font-size: clamp(2.4rem, 6vw, 3.8rem);
   font-style: italic;
   margin-bottom: 2.25rem;
 }
 
-.bio-copy__para {
+.about-copy__para {
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--ink-soft);
@@ -49,10 +49,10 @@
 }
 
 @media (max-width: 720px) {
-  .bio-page__inner {
+  .about-page__inner {
     grid-template-columns: 1fr;
   }
-  .bio-page__photo-wrap {
+  .about-page__photo-wrap {
     max-width: 260px;
     margin-inline: auto;
   }

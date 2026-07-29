@@ -2,7 +2,7 @@
  * ────────────────────────────────────────────────────────────────
  * EDIT ME
  * Every string in this file is placeholder content. Replace it with
- * the real thing — name, byline, bio, Substack URL, and the actual
+ * the real thing — name, byline, about copy, Substack URL, and the actual
  * scraps that belong in The Graveyard. Nothing elsewhere in the app
  * needs to change; the pages just render whatever's in here.
  * ────────────────────────────────────────────────────────────────
@@ -14,15 +14,16 @@ export const site = {
   byline: "Fiction with a body count and a punchline.",
   role: "Author",
   substackUrl: "https://bjfantine.substack.com",
-  email: "bj@bjfantine.com",
   blueskyUrl: "https://bsky.app/profile/bjfantine.bsky.social",
   instagramUrl: "https://www.instagram.com/bjfantine/",
-  // Replace with a real photo (jpg/png/webp all fine) — keep this path,
-  // or update it here if you rename the file.
-  photo: "/author-photo.svg",
+  photo: "/headshot_retouched.jpg",
+  // Get a free access key at https://web3forms.com (just enter the inbox
+  // email you want messages forwarded to — no account/password needed)
+  // and paste it here. Until then the contact form will show an error.
+  web3formsAccessKey: "c76162a3-a9bd-48d0-b947-64459fad16e0",
 };
 
-export const bio = {
+export const about = {
   paragraphs: [
     `${site.name} writes fiction the way other people set off fireworks in a parking lot — with enthusiasm, a little too close to the car, and no real plan for the aftermath. Work has appeared in places that pay in exposure and places that pay in actual money, sometimes even the same year.`,
     `A former [placeholder job — replace with something true and slightly absurd] and a current owner of too many notebooks, ${site.name.split(" ")[0]} writes about grief, bureaucracy, and the specific indignity of being a person, usually all in the same paragraph. The work has been called "unsettling," "very funny," and "unsettling because it's very funny," which feels about right.`,
@@ -36,9 +37,9 @@ export type HeroQuote = {
   source: string;
 };
 
-// A working writer's shelf, not a highlight reel — pulled from Quotes.rtf.
-// The Vuong line is the one worth building a homepage around; the rest
-// round it out with some humor and some heart.
+// The writer's own shelf — pulled from Quotes.rtf. The Vuong line is the
+// one bolded in the source and the one worth building a homepage around;
+// the rest are the mix of company worth being seen keeping.
 export const heroQuotes: HeroQuote[] = [
   {
     text: "You once asked me what it means to be a writer. So here goes.",
@@ -46,9 +47,14 @@ export const heroQuotes: HeroQuote[] = [
     source: "On Earth We're Briefly Gorgeous",
   },
   {
-    text: "Everything was beautiful and nothing hurt.",
-    author: "Kurt Vonnegut",
-    source: "Slaughterhouse-Five",
+    text: "The world is always someone else's.",
+    author: "Clarice Lispector",
+    source: "A Breath of Life",
+  },
+  {
+    text: "It’s a common belief that something exists when it’s part of a narrative.",
+    author: "Kathy Acker",
+    source: "Great Expectations"
   },
   {
     text: "The robbing of a hot dog vendor is a symbolic act.",
@@ -56,19 +62,49 @@ export const heroQuotes: HeroQuote[] = [
     source: "A Confederacy of Dunces",
   },
   {
+    text: "There's times in your childhood / you could really do with a drink.",
+    author: "Sasha Debevec-McKenney",
+    source: "Joy is My Middle Name",
+  },
+  {
+    text: "Everything alive / is listening.",
+    author: "Robyn Schiff",
+    source: "A Woman of Property",
+  },
+  {
+    text: "We were all now old enough, ripened enough with wear and love, not to need to lighten every little bit of pain.",
+    author: "Allan Gurganus",
+    source: "Plays Well With Others",
+  },
+  {
+    text: "Narratives in which one thing follows from the previous thing are usually imaginary.",
+    author: "Sarah Manguso",
+    source: "The Two Kinds of Decay",
+  },
+  {
+    text: "The shards of storytelling are not always sharp.",
+    author: "Beth Nguyen",
+    source: "Owner of a Lonely Heart",
+  },
+  {
     text: "The most pressing questions are naive ones.",
     author: "Wisława Szymborska",
     source: "The People on the Bridge",
   },
   {
-    text: "This is exactly when you want to look good. When you making trouble.",
-    author: "Maurice Carlos Ruffin",
-    source: "The Ones Who Don't Say They Love You",
+    text: "Nothing good can come out of a conversation in-line at the pharmacy.",
+    author: "Anne Elizabeth Moore",
+    source: "Gentrifier",
   },
   {
-    text: "We've achieved something.",
-    author: "James Roberts",
-    source: "Transformers: More Than Meets the Eye #41",
+    text: "When we breathe, it takes us apart.",
+    author: "Dennis Cooper",
+    source: "The Tenderness of the Wolves",
+  },
+  {
+    text: "Everything was beautiful and nothing hurt.",
+    author: "Kurt Vonnegut",
+    source: "Slaughterhouse-Five",
   },
 ];
 
