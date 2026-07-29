@@ -10,7 +10,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function Graveyard() {
   const [agreed, setAgreed] = useState(
-    () => localStorage.getItem(AGREED_KEY) === "true"
+    () => sessionStorage.getItem(AGREED_KEY) === "true"
   );
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -32,7 +32,7 @@ export default function Graveyard() {
           <TermsGate
             key="terms-gate"
             onAgree={() => {
-              localStorage.setItem(AGREED_KEY, "true");
+              sessionStorage.setItem(AGREED_KEY, "true");
               setAgreed(true);
             }}
           />

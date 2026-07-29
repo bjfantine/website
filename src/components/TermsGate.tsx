@@ -11,20 +11,17 @@ export default function TermsGate({ onAgree }: Props) {
   const [checked, setChecked] = useState(false);
 
   return (
-    <motion.div
+    <div
       className="terms-gate"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
       role="dialog"
       aria-modal="true"
       aria-labelledby="terms-gate-title"
     >
       <motion.div
         className="terms-gate__card"
-        initial={{ opacity: 0, y: 24, scale: 0.98 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ y: 24, scale: 0.98 }}
+        animate={{ y: 0, scale: 1 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
         <p className="terms-gate__kicker">Rules of the Dead — Please Read Before Entering</p>
         <h1 id="terms-gate-title" className="terms-gate__title">
@@ -73,6 +70,6 @@ export default function TermsGate({ onAgree }: Props) {
           </button>
         </div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 }
