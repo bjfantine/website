@@ -10,18 +10,25 @@
   color: inherit;
 }
 
-.tombstone__stone {
-  position: relative;
+.tombstone__grave {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  aspect-ratio: 467 / 661;
   transition: transform 0.3s var(--ease-out), filter 0.3s var(--ease-out);
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
 }
 
-.tombstone:hover .tombstone__stone,
-.tombstone:focus-visible .tombstone__stone {
+.tombstone:hover .tombstone__grave,
+.tombstone:focus-visible .tombstone__grave {
   transform: translateY(-6px) rotate(-0.6deg);
   filter: drop-shadow(0 20px 34px rgba(0, 0, 0, 0.45));
+}
+
+.tombstone__stone {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 467 / 661;
 }
 
 .tombstone__art {
@@ -37,34 +44,23 @@
 
 .tombstone__grass {
   position: absolute;
-  inset: 0;
+  left: 0%;
+  top: 34.19%;
   width: 100%;
-  height: 100%;
+  height: 65.66%;
   object-fit: fill;
   display: block;
   pointer-events: none;
   z-index: 2;
-  transition: transform 0.5s var(--ease-out), opacity 0.5s var(--ease-out);
+  transform-origin: 50% 100%;
+  transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
 }
 
-.tombstone__grass--left {
-  transform-origin: 0% 100%;
-}
-
-.tombstone__grass--right {
-  transform-origin: 100% 100%;
-}
-
-.tombstone:hover .tombstone__grass--left,
-.tombstone:focus-visible .tombstone__grass--left {
-  transform: translate(-14%, 5%) rotate(-9deg);
+.tombstone:hover .tombstone__grass,
+.tombstone:focus-visible .tombstone__grass {
   opacity: 0;
-}
-
-.tombstone:hover .tombstone__grass--right,
-.tombstone:focus-visible .tombstone__grass--right {
-  transform: translate(14%, 5%) rotate(9deg);
-  opacity: 0;
+  transform: scale(0.96);
+  filter: blur(3px);
 }
 
 .tombstone__stone-top {
@@ -139,15 +135,12 @@
 
 .tombstone__mound {
   display: block;
-  width: 72%;
-  height: 10px;
-  margin-top: 4px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(20, 30, 22, 0.4) 0%,
-    transparent 75%
-  );
-  border-radius: 50%;
+  width: 112%;
+  height: 34px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 3;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.4));
 }
 
 @media (prefers-reduced-motion: reduce) {
